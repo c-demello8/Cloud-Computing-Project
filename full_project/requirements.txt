@@ -1,0 +1,10 @@
+# This is a default requirements for each of the scripts to make sure they have they correct files.
+
+numpy
+pandas 
+matplotlib
+uproot
+awkward 
+vector 
+time 
+requests
