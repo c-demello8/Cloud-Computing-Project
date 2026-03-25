@@ -1,0 +1,11 @@
+#!usr/bin/env python
+import pika
+
+params = pika.ConnectionParameters('rabbitmq')
+
+connection = pika.BlockingConnection(params)
+channel = connection.channel()
+channel.queue_declare(queue='messages')
+
+channel.basic_publish(exchange="",routing_key='messages',body="Hello!")
+print("[x] sent 'Hello World!")
