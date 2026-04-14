@@ -1,0 +1,1 @@
+Please Go to the Folder Simon Hana Project V2 and Open there the readme file you will find the commands to operate the distribution package in there and the commands to be able to produce ther histogram.
