@@ -8,11 +8,11 @@ You will find three different seperate folders, one with the producer, one with 
 Also a notebook, of the starting code and also the broken down code into the three sections :)
 
 Use the following commands
-' For Inital Run'
+# For Inital Run
 docker compose down -v
 docker compose up --build --scale worker=4
 
-' To see the produced graph'
-# wait for completion, then Ctrl+C
+# To see the produced graph
+ wait for completion, then Ctrl+C
 docker run --rm -v simonhanaprojectv2_results_vol:/results -v "$(pwd)/results":/out alpine cp /results/* /out/
 docker compose down -v
