@@ -9,6 +9,7 @@ Also a notebook, of the starting code and also the broken down code into the thr
 
 Use the following commands
 # For Inital Run
+docker compose build
 docker compose down -v
 docker compose up --build --scale worker=4
 
