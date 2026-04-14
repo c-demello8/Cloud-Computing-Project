@@ -1,0 +1,9 @@
+pika
+uproot
+awkward
+vector
+numpy
+atlasopenmagic
+aiohttp
+requests
+fsspec

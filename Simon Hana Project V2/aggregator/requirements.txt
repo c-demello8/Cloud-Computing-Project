@@ -1,0 +1,4 @@
+pika
+numpy
+matplotlib
+awkward

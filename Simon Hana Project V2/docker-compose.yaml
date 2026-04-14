@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: hzz_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hzz_net
+
+  producer:
+    build: ./producer
+    container_name: producer
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    networks:
+      - hzz_net
+    restart: "no"
+
+  aggregator:
+    build: ./aggregator
+    container_name: aggregator
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+      - RESULTS_DIR=/results
+    volumes:
+      - results_vol:/results
+    networks:
+      - hzz_net
+    restart: "no"
+
+  worker:
+    build: ./worker
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    networks:
+      - hzz_net
+    restart: on-failure
+
+volumes:
+  results_vol:
+
+networks:
+  hzz_net:
+    driver: bridge
