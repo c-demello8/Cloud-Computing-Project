@@ -18,7 +18,7 @@ docker run --rm \
 
 
 
-** System Architecture **
+ # System Architecture
 ```mermaid
 graph TD
 
