@@ -18,29 +18,14 @@ docker run --rm \
 
 
 ```mermaid
-flowchart LR
+graph TD
 
-    subgraph Producers
-        P1[Producer 1]
-        P2[Producer 2]
-        P3[Producer 3]
-    end
+    Producer[Producer]
+    Aggregator[Aggregator]
+    Worker[Worker Pool]
 
-    A[Aggregator]
-
-    subgraph Workers
-        W1[Worker 1]
-        W2[Worker 2]
-        W3[Worker 3]
-    end
-
-    P1 --> A
-    P2 --> A
-    P3 --> A
-
-    A --> W1
-    A --> W2
-    A --> W3
+    Producer --> Aggregator
+    Aggregator --> Worker
 ```
 
 
