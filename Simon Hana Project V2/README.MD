@@ -1,5 +1,6 @@
 This is my folder for my project on Higgs Boson Analysis, utilising Docker for containerization and scalable deployment.
  # System Architecture
+
 ```mermaid
 graph TD
 
@@ -8,6 +9,9 @@ graph TD
     Worker[Worker Pool]
 
     Producer --> Aggregator
+    Aggregator --> Worker
+```
+
 
 Use the following commands
 # For Inital Run
