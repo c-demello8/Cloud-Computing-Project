@@ -1,11 +1,4 @@
-Hi welcome to my project,
-
-Hope you are having a good day.
-
-You will find three different seperate folders, one with the producer, one with the aggregator and one with worker file.
-
-
-Also a notebook, of the starting code and also the broken down code into the three sections :)
+This is my folder for my Project on Higgs Boson Analysis, utilising Docker for containerization and scalable deployment.
 
 Use the following commands
 # For Inital Run
