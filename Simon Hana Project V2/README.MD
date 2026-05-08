@@ -17,5 +17,31 @@ docker run --rm \
   alpine sh -c "cp -r /results/. /out/"
 
 
+```mermaid
+flowchart LR
+
+    subgraph Producers
+        P1[Producer 1]
+        P2[Producer 2]
+        P3[Producer 3]
+    end
+
+    A[Aggregator]
+
+    subgraph Workers
+        W1[Worker 1]
+        W2[Worker 2]
+        W3[Worker 3]
+    end
+
+    P1 --> A
+    P2 --> A
+    P3 --> A
+
+    A --> W1
+    A --> W2
+    A --> W3
+```
+
 
 
