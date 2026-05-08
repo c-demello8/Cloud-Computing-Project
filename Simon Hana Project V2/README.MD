@@ -1,4 +1,4 @@
-This is my folder for my project on Higgs Boson Analysis, utilising Docker for containerization and scalable deployment.
+
  # System Architecture
 
 ```mermaid
